@@ -1,0 +1,59 @@
+.banner-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 10px;
+}
+
+.banner {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background-color: white;
+    margin: 0px 10px 15px 10px;
+    &-content {
+        display: flex;
+        align-items: center;
+        &__items {
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            h1 {
+                color: #42464D;
+                font-size: 62px;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 120%;
+                span {
+                    text-transform: uppercase;
+                }
+            }
+            p {
+                color: #42464D;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+            }
+        }
+    }
+    &-down {
+        
+        padding: 0 0 46px 50px;
+        button {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            border: none;
+            background: white;
+        }
+        p {
+            color: #84D1D9;
+            font-family: Gotham Pro;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 140%
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: #EFF0F4;
+    margin: 20px 0;
+    max-width: 420px;
+    padding:  32px;
+    gap: 20px;
+    &-author {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        img {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 15px 15px 54px 0px rgba(40, 43, 57, 0.30);
+        padding: 14px;
+        }
+        &__name {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            p {
+                color: #42464D;
+                font-family: Gotham Pro;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 120%;
+            }
+        }
+    }
+    &-review {
+        display: flex;
+        align-items: flex-end;
+        p {
+            color: #393B3E;
+            font-family: Gotham Pro;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 168%; /* 26.88px */
+        }
+        svg {
+            width: 30%;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.partners {
+    margin: 10px 10px;
+    padding: 92px 0 ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-text{
+        padding-bottom: 30px;
+        &__subtitle {
+            p {
+                color: #393B3E;
+                text-align: center;
+                font-family: Gotham Pro;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 130%;
+                text-transform: uppercase;
+                opacity: 0.3;
+            }
+        }
+        &__title {
+            h1 {
+                color: #42464D;
+                text-align: center;
+                font-family: Gotham Pro;
+                font-size: 44px;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 120%;
+            }
+        }
+    }
+    &-items {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 20px;
+        &__box {
+            background: #fff;
+            border-radius: 32px;
+            padding: 26px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

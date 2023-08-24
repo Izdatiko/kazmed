@@ -1,0 +1,38 @@
+// fonts
+@import "../GothamPro/stylesheet.css";
+
+// Components
+@import "./components/banner.scss";
+@import "./components/partners.scss";
+@import "./components/header.scss";
+@import "./components/review.scss";
+@import "./components/about.scss";
+@import "./components/footer.scss";
+
+// UI components
+@import "./ui/button.scss";
+@import "./ui/box.scss";
+@import "./ui/swiper.scss";
+@import "./ui/runningtext.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gotham Pro Regular", sans-serif;
+}
+
+body    {
+    background-color: #EFF0F4;
+}
+
+.section-container {
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 10px;
+}
+
+
+
