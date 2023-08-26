@@ -45,7 +45,7 @@
             >Контакты</nuxt-link
           >
         </div>
-        <div class="header-nav__items">
+        <div v-if="!isMobile" class="header-nav__items">
           <div class="header-nav__contacts">
             <nuxt-link to="/">
               <IconWhatsapp />
@@ -56,24 +56,28 @@
             </nuxt-link>
           </div>
         </div>
+        <div v-if="isMobile" class="header-nav__items">
+          <button
+            @click="isBurger = !isBurger"
+            :class="isBurger ? 'header-svg active-burger' : 'header-svg'"
+          >
+            <IconBurger />
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const isMenuOpen = ref(false);
-
-let isActive = ref("");
 let isMobile = useMobile();
+let isBurger = useBurger();
+let isActive = ref("");
 
+console.log(isMobile.value);
 function setActive(section) {
   isActive.value = section;
 }
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
 </script>
 
 <style scoped>

@@ -23,6 +23,10 @@
     font-family: "Gotham Pro Regular", sans-serif;
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 body    {
     background-color: #EFF0F4;
 }

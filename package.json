@@ -11,10 +11,11 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "nuxt-anchorscroll": "^1.0.2"
   },
   "dependencies": {
-    "nuxt-swiper": "^1.2.0",
+    "nuxt-swiper": "^1.2.1",
     "nuxt-viewport": "^2.0.6",
     "sass": "^1.66.1"
   }

@@ -1,14 +1,56 @@
 .about {
-    background: white;
-    border-radius: 32px;
-    margin: 10px 10px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border-radius: 32px 32px 0 32px;
+    margin: 0 auto;
+    max-width: 1404px;
+    padding-bottom: 50px;
+    padding-top: 92px;
+    position: relative;
+    width: 100%;
+    display: none;
+    &-design{
+        display: flex;
+        &__box{
+            background-color: #fff;
+            border-radius: 0 0 32px 32px;
+            height: 130px;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            width: 800px;
+            z-index: 2;
+        }
+        &__opacity {
+            position: absolute;
+            background-color: #EFF0F4;
+            border-radius: 0 32px 0 0;
+            height: 130px;
+            left: 0;
+            // top: 100%;
+            width: 604px;
+            z-index: 1;
+        }
+        &__block {
+            position: relative;
+            background-color: white;
+            height: 130px;
+            left: 0;
+            // top: 100%;
+            width: 604px;
+        }
+    }
     &-content {
         display: flex;
         justify-content: space-between;
         gap: 100px;
+        margin-bottom: 50px;
         &__swiper {
             display: flex;
             gap: 10px;
+            flex-direction: column;
             button {
                 display: flex;
                 align-items: center;
@@ -21,7 +63,7 @@
         &__text {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 30px;
             h6 {
                 color: #393B3E;
                 font-family: Gotham Pro;
@@ -50,4 +92,18 @@
             }
         }
     }
+}
+// .block-opacity {
+//     position: relative;
+//     background-color: #fff;
+//     height: 130px;
+//     left: 0;
+//     top: 100%;
+//     width: 604px;
+// }
+
+.block-container {
+    position: absolute;
+    display: flex;
+    top: 100%;
 }

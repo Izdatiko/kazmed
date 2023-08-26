@@ -1,9 +1,9 @@
 <template>
-  <div class="about">
+  <div id="component-about" class="about">
     <div class="section-container">
       <div class="about-content">
         <div class="about-content__swiper">
-          <UiSwiper />
+          <img src="@/assets/img/about/1.png" alt="" />
         </div>
         <div class="about-content__text">
           <h6>О компании</h6>
@@ -21,22 +21,11 @@
           <UiButton> Узнать больше </UiButton>
         </div>
       </div>
-      <div class="about-content">
-        <div class="about-content__text">
-          <h1>Лицензии</h1>
-          <p>
-            KazMedEngineering обладает необходимыми лицензиями и сертификатами
-            для предоставления авторизованных услуг. Компания получила
-            официальное разрешение от Philips на распространение и обслуживание
-            медицинского оборудования. Данная лицензия демонстрирует наше тесное
-            партнерство и приверженность строгим стандартам Philips
-          </p>
-          <UiButton> Узнать больше </UiButton>
-        </div>
-        <div class="about-content__swiper">
-          <UiSwiper />
-        </div>
-      </div>
+    </div>
+    <div class="about-design__box"></div>
+    <div class="block-container">
+      <div class="about-design__opacity"></div>
+      <div class="about-design__block"></div>
     </div>
   </div>
 </template>
