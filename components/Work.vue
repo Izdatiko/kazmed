@@ -17,6 +17,7 @@
           class="form-form__input"
           type="tel"
           placeholder="Телефон"
+          :maxlength="maxPhoneNumberLength"
         />
         <UiButton type="submit" class="whiteBtn">Оставить заявку</UiButton>
       </form>
@@ -28,13 +29,21 @@
       </div>
     </div>
   </div>
+  <UiModal @close-modal="closeModal" v-show="showModal"></UiModal>
 </template>
 
 <script setup>
+let showModal = ref(false);
+
+const closeModal = () => {
+  showModal.value = false;
+};
+
 const formData = ref({
   name: "",
   phone_number: "",
 });
+const maxPhoneNumberLength = 12;
 
 const submitForm = async () => {
   try {
@@ -56,6 +65,7 @@ const submitForm = async () => {
       console.log(responseData);
       formData.value.name = "";
       formData.value.phone_number = "";
+      showModal.value = true;
     } else {
       console.error("Ошибка");
     }

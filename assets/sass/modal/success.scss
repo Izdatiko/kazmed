@@ -16,12 +16,20 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        text-align: center;
     }
     &-close {
         position: absolute;
         top: 15px;
         right: 15px;
         cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+        width: 90%; /* Adjust the width for smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+        top: 40%; /* Adjust the vertical position for smaller screens */
+        transform: translate(-50%, -40%);
     }
 }
 
