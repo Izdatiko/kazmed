@@ -7,11 +7,14 @@
         </div>
         <div class="review-content__boxes">
           <UiBox />
-          <UiBox />
-          <UiBox />
         </div>
-        <UiButton>Смотреть все</UiButton>
+        <UiButton class="btn" :to="'/reviews'">Смотреть все</UiButton>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+</script>
+
+

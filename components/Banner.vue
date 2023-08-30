@@ -2,39 +2,35 @@
   <div class="banner">
     <swiper
       :navigation="true"
+      :space-between="20"
       :pagination="true"
       :modules="modules"
       class="mySwiper"
+      :autoplay="{
+        delay: 7000,
+      }"
     >
-      <swiper-slide class="banner-container">
+      <swiper-slide
+        v-for="banner in banners"
+        :key="banner.id"
+        class="banner-container"
+      >
         <div class="banner-content">
           <div class="banner-content__items">
-            <h1>
+            <!-- <h1>
               Обслуживание<br />
               мед. оборудования<br />
               <span>Philips</span>
             </h1>
-            <p>от официального<br />представителя</p>
-            <UiButton> Узнать больше </UiButton>
-          </div>
-          <div class="banner-content__items">
-            <img src="@/assets/img/banner.png" alt="" />
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="banner-container">
-        <div class="banner-content">
-          <div class="banner-content__items">
+            <p>от официального<br />представителя</p> -->
             <h1>
-              Обслуживание<br />
-              мед. оборудования<br />
-              <span>Philips</span>
+              {{ banner.title.slice(3, -4) }}
             </h1>
-            <p>от официального<br />представителя</p>
-            <UiButton> Узнать больше </UiButton>
+            <p>{{ banner.sub_title }}</p>
+            <UiButton class="btn"> {{ banner.button }} </UiButton>
           </div>
           <div class="banner-content__items">
-            <img src="@/assets/img/banner.png" alt="" />
+            <img :src="banner.image" alt="" />
           </div>
         </div>
       </swiper-slide>
@@ -50,4 +46,5 @@
 </template>
 
 <script setup>
+const { data: banners } = await useFetch("https://www.api.kme.kz/api/banners/");
 </script>

@@ -7,7 +7,14 @@
 @import "./components/header.scss";
 @import "./components/review.scss";
 @import "./components/about.scss";
+@import "./components/advantages.scss";
+@import "./components/services.scss";
+@import "./components/form.scss";
+@import "./components/contacts.scss";
 @import "./components/footer.scss";
+
+// Modal components
+@import "./modal/success.scss";
 
 // UI components
 @import "./ui/button.scss";

@@ -5,12 +5,15 @@
     background-size: cover;
     border-radius: 32px 32px 0 32px;
     margin: 0 auto;
-    max-width: 1404px;
+    max-width: 1400px;
     padding-bottom: 50px;
     padding-top: 92px;
     position: relative;
     width: 100%;
-    display: none;
+    // display: none;
+    @media (max-width: 1400px) {
+        border-radius: 32px ;
+    }
     &-design{
         display: flex;
         &__box{
@@ -22,6 +25,9 @@
             top: 100%;
             width: 800px;
             z-index: 2;
+            @media (max-width: 1400px) {
+                display: none;
+            }
         }
         &__opacity {
             position: absolute;
@@ -93,17 +99,13 @@
         }
     }
 }
-// .block-opacity {
-//     position: relative;
-//     background-color: #fff;
-//     height: 130px;
-//     left: 0;
-//     top: 100%;
-//     width: 604px;
-// }
+
 
 .block-container {
     position: absolute;
     display: flex;
     top: 100%;
+    @media (max-width: 1400px) {
+        display: none;
+    }
 }

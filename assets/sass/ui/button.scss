@@ -14,3 +14,29 @@
     cursor: pointer;
     background: linear-gradient(135deg, #09A3B2 0%, #1B629C 100%);
 }
+
+.whiteBtn {
+    border: 0;
+    font-size: 14px;
+    display: flex;
+    width: 196px;
+    height: 46px;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #09A3B2;
+    border-radius: 23px;
+    cursor: pointer;
+    background: #FFFFFF;
+    transition: all 1000ms ease;
+
+}
+
+.whiteBtn:hover {
+        background: linear-gradient(135deg, #09A3B2 0%, #1B629C 100%);
+        color: white;
+        transition: all 1000ms ease;
+}
+

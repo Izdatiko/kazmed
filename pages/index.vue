@@ -15,6 +15,12 @@
     <IconHash />
     <h1>Обслуживание</h1>
   </UiRunningText>
+  <Advantages />
+  <Services />
+  <Form />
+  <Contacts />
+  <Work />
+  <ModalSuccess />
 </template>
 
 <script setup>

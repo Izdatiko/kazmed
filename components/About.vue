@@ -3,7 +3,31 @@
     <div class="section-container">
       <div class="about-content">
         <div class="about-content__swiper">
-          <img src="@/assets/img/about/1.png" alt="" />
+          <!-- <Swiper
+            class="swiper-container"
+            :pagination="true"
+            :effect="'coverflow'"
+            :grabCursor="true"
+            :centeredSlides="true"
+            :slidesPerView="'auto'"
+            :coverflow="{
+              rotete: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }"
+          >
+            <swiper-slide>
+              <img src="../assets/img/about/1.png" alt="" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="../assets/img/about/2.png" alt="" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="../assets/img/about/3.png" alt="" />
+            </swiper-slide>
+          </Swiper> -->
         </div>
         <div class="about-content__text">
           <h6>О компании</h6>
@@ -18,7 +42,7 @@
             предоставления качественных услуг по диагностике, ремонту и
             обслуживанию медицинской техники
           </p>
-          <UiButton> Узнать больше </UiButton>
+          <UiButton class="btn"> Узнать больше </UiButton>
         </div>
       </div>
     </div>
@@ -29,3 +53,17 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+</style>
