@@ -10,7 +10,7 @@
     padding-top: 92px;
     position: relative;
     width: 100%;
-    display: none;
+    overflow: hidden;
     @media (max-width: 1400px) {
         border-radius: 32px ;
     }
@@ -54,9 +54,8 @@
         gap: 100px;
         margin-bottom: 50px;
         &__swiper {
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
+            height: 530px;
+            flex: 1;
             button {
                 display: flex;
                 align-items: center;

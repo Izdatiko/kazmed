@@ -1,46 +1,45 @@
 <template>
   <div id="component-about" class="about">
     <div class="section-container">
-      <div class="about-content">
+      <div v-for="section in about" :key="section.id" class="about-content">
         <div class="about-content__swiper">
-          <!-- <Swiper
-            class="swiper-container"
+          <Swiper
+            class="swiper-cards"
+            :width="700"
+            :modules="[SwiperEffectCoverflow, SwiperPagination]"
             :pagination="true"
+            :loop="false"
             :effect="'coverflow'"
-            :grabCursor="true"
-            :centeredSlides="true"
-            :slidesPerView="'auto'"
-            :coverflow="{
-              rotete: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
+            :slides-per-view="3"
+            :centered-slides="true"
+            :coverflow-effect="{
+              rotate: 90,
+              stretch: 1,
+              depth: 20,
+              rotate: 1,
+              modifier: 10,
               slideShadows: true,
             }"
           >
-            <swiper-slide>
-              <img src="../assets/img/about/1.png" alt="" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="../assets/img/about/2.png" alt="" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="../assets/img/about/3.png" alt="" />
-            </swiper-slide>
-          </Swiper> -->
+            <SwiperSlide
+              v-for="image in section.about_images"
+              :key="image.image"
+              class="swiper-wraper"
+            >
+              <div
+                class="swiper-slide"
+                :style="`background-image: url(${image.image})`"
+              ></div>
+            </SwiperSlide>
+            <!-- <UiSwiperControls class="controls" /> -->
+          </Swiper>
         </div>
         <div class="about-content__text">
           <h6>О компании</h6>
-          <h1>KazMedEngineering основано в июле 2007 года</h1>
+          <h1>{{ section.title }}</h1>
+
           <p>
-            Товарищество с ограниченной ответственностью «КазМедИнжиниринг» было
-            основано в июле 2007 года.Мы являемся авторизированным
-            дистрибьютором Philips Medical System Nederland B.V. в Республике
-            Казахстан В своем составе компания имеет высококвалифицированных
-            инженеров, прошедших обучение в ведущих учебных центрах Европы и
-            США. Компания оснащена всем необходимым инструментарием для
-            предоставления качественных услуг по диагностике, ремонту и
-            обслуживанию медицинской техники
+            {{ section.description }}
           </p>
           <UiButton class="btn"> Узнать больше </UiButton>
         </div>
@@ -54,6 +53,10 @@
   </div>
 </template>
 
+<script setup>
+const { data: about } = await useFetch("https://www.api.kme.kz/api/about/");
+</script>
+
 <style scoped>
 .swiper-container {
   width: 100%;
@@ -63,7 +66,14 @@
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 450px;
+  border-radius: 32px;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+.swiper-cards {
+  overflow: hidden;
 }
 </style>
