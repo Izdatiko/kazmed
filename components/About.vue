@@ -5,20 +5,24 @@
         <div class="about-content__swiper">
           <Swiper
             class="swiper-cards"
-            :width="700"
+            :width="1000"
             :modules="[SwiperEffectCoverflow, SwiperPagination]"
             :pagination="true"
             :loop="false"
             :effect="'coverflow'"
+            :space-between="30"
             :slides-per-view="3"
+            :slider-to-scroll="3"
             :centered-slides="true"
             :coverflow-effect="{
               rotate: 90,
               stretch: 1,
               depth: 20,
               rotate: 1,
-              modifier: 10,
-              slideShadows: true,
+              modifier: 1,
+            }"
+            :zoom="{
+              maxRatio: 5,
             }"
           >
             <SwiperSlide
@@ -70,7 +74,7 @@ const { data: about } = await useFetch("https://www.api.kme.kz/api/about/");
   height: 450px;
   border-radius: 32px;
   flex-shrink: 0;
-  margin: auto;
+  /* margin: 20px; */
 }
 
 .swiper-cards {
