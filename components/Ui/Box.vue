@@ -17,17 +17,5 @@
 </template>
 
 <script setup>
-const reviews = ref([]);
-
-const fetchData = async () => {
-  try {
-    const response = await fetch("https://www.api.kme.kz/api/reviews/");
-    const data = await response.json();
-    reviews.value = data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-};
-
-onMounted(fetchData);
+const { props } = defineProps(["reviews"]);
 </script>

@@ -48,7 +48,6 @@ const formData = ref({
 
 const closeModal = () => {
   showModal.value = false;
-  console.log(showModal);
 };
 
 const maxPhoneNumberLength = 12;

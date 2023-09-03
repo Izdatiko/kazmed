@@ -73,7 +73,7 @@
           <nuxt-link
             :class="{ isActive: isActive === 'about' }"
             @click="setActive('about')"
-            to="/"
+            to="/about"
             >О компании</nuxt-link
           >
           <nuxt-link
@@ -85,7 +85,7 @@
           <nuxt-link
             :class="{ isActive: isActive === 'partners' }"
             @click="setActive('partners')"
-            to="/"
+            to="/partners"
             >Партнеры</nuxt-link
           >
           <nuxt-link
@@ -118,7 +118,6 @@ let isMobile = useMobile();
 let isBurger = useBurger(false);
 let isActive = ref("");
 
-console.log(isMobile.value);
 function setActive(section) {
   isActive.value = section;
 }

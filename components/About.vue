@@ -1,13 +1,15 @@
 <template>
   <div id="component-about" class="about">
-    <div class="section-container">
-      <div v-for="section in about" :key="section.id" class="about-content">
+    <div v-for="section in about" :key="section.id">
+      <div class="about-content">
         <div class="about-content__swiper">
           <Swiper
             class="swiper-cards"
-            :width="1000"
+            :width="800"
             :modules="[SwiperEffectCoverflow, SwiperPagination]"
             :pagination="true"
+            :initialSlide="1"
+            ,
             :loop="false"
             :effect="'coverflow'"
             :space-between="30"
@@ -15,27 +17,22 @@
             :slider-to-scroll="3"
             :centered-slides="true"
             :coverflow-effect="{
-              rotate: 90,
               stretch: 1,
               depth: 20,
               rotate: 1,
               modifier: 1,
-            }"
-            :zoom="{
-              maxRatio: 5,
+              slideShadows: false,
             }"
           >
             <SwiperSlide
-              v-for="image in section.about_images"
-              :key="image.image"
+              v-for="(image, index) in section.about_images"
+              :key="index"
               class="swiper-wraper"
+              :style="`background-image: url(${image.image});
+              };`"
             >
-              <div
-                class="swiper-slide"
-                :style="`background-image: url(${image.image})`"
-              ></div>
+              <div class="swiper-slide"></div>
             </SwiperSlide>
-            <!-- <UiSwiperControls class="controls" /> -->
           </Swiper>
         </div>
         <div class="about-content__text">
@@ -46,6 +43,51 @@
             {{ section.description }}
           </p>
           <UiButton class="btn"> Узнать больше </UiButton>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="about-content__license">
+          <h1>Лицензии</h1>
+          <p>
+            KazMedEngineering обладает необходимыми лицензиями и сертификатами
+            для предоставления авторизованных услуг. Компания получила
+            официальное разрешение от Philips на распространение и обслуживание
+            медицинского оборудования. Данная лицензия демонстрирует наше тесное
+            партнерство и приверженность строгим стандартам Philips
+          </p>
+        </div>
+        <div class="about-content__swiper">
+          <Swiper
+            class="swiper-cards"
+            :width="800"
+            :modules="[SwiperEffectCoverflow, SwiperPagination]"
+            :pagination="true"
+            :initialSlide="1"
+            ,
+            :loop="false"
+            :effect="'coverflow'"
+            :space-between="30"
+            :slides-per-view="3"
+            :slider-to-scroll="3"
+            :centered-slides="true"
+            :coverflow-effect="{
+              stretch: 1,
+              depth: 20,
+              rotate: 1,
+              modifier: 1,
+              slideShadows: false,
+            }"
+          >
+            <SwiperSlide
+              v-for="image in licenses"
+              :key="image.id"
+              class="swiper-wraper"
+              :style="`background-image: url(${image.image});
+              };`"
+            >
+              <div class="swiper-slide"></div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </div>
@@ -59,25 +101,31 @@
 
 <script setup>
 const { data: about } = await useFetch("https://www.api.kme.kz/api/about/");
+const { data: licenses } = await useFetch(
+  "https://www.api.kme.kz/api/licenses/"
+);
 </script>
 
-<style scoped>
-.swiper-container {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+
+
+<style lang="scss" scoped>
 .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 350px;
   height: 450px;
   border-radius: 32px;
-  flex-shrink: 0;
-  /* margin: 20px; */
+  transition: all 0.3s ease;
+
+  & .swiper-slide-active {
+    z-index: 2;
+    transform: scale(1.8);
+  }
 }
 
 .swiper-cards {
   overflow: hidden;
+  max-width: 691px !important;
+  width: 100%;
 }
 </style>
