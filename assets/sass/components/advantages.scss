@@ -29,8 +29,6 @@
             column-gap: 16px;
         }
         &__item {
-            // max-width: 320px;
-            // justify-self: center;
             h4 {
                 border: 1px solid #e4e9f1;
                 border-radius: 28px;
@@ -71,6 +69,16 @@
             max-width: 250px;
         }
     }
+    &-oBlock {
+        background-color: black;
+        border-radius: 32px 32px 0 0;
+        height: 130px;
+        display: none;
+        right: 0;
+        top: 100%;
+        width: 800px;
+        z-index: 2;
+    }
     &-additional {
         align-items: center;
         background: url(/assets/img/down.png);
@@ -78,7 +86,6 @@
         background-size: cover;
         border-radius: 20px;
         display: flex;
-        -webkit-justify-content: space-between;
         justify-content: space-between;
         margin-bottom: 92px;
         margin-left: auto;
@@ -86,6 +93,7 @@
         padding: 30px 50px;
         margin-top: 10px;
         width: 1050px;
+        z-index: 1; 
         @media (max-width: 1400px) {
             width: 100%;
             padding: 20px;

@@ -3,37 +3,39 @@
     <div v-for="section in about" :key="section.id">
       <div class="about-content">
         <div class="about-content__swiper">
-          <Swiper
-            class="swiper-cards"
-            :width="800"
-            :modules="[SwiperEffectCoverflow, SwiperPagination]"
-            :pagination="true"
-            :initialSlide="1"
-            ,
-            :loop="false"
-            :effect="'coverflow'"
-            :space-between="30"
-            :slides-per-view="3"
-            :slider-to-scroll="3"
-            :centered-slides="true"
-            :coverflow-effect="{
-              stretch: 1,
-              depth: 20,
-              rotate: 1,
-              modifier: 1,
-              slideShadows: false,
-            }"
-          >
-            <SwiperSlide
-              v-for="(image, index) in section.about_images"
-              :key="index"
-              class="swiper-wraper"
-              :style="`background-image: url(${image.image});
-              };`"
+          <div class="swiper-container">
+            <Swiper
+              class="swiper-cards"
+              :width="800"
+              :modules="[SwiperEffectCoverflow, SwiperPagination]"
+              :pagination="true"
+              :initialSlide="1"
+              :loop="false"
+              :effect="'coverflow'"
+              :space-between="60"
+              :slides-per-view="3"
+              :slider-to-scroll="3"
+              :centered-slides="true"
+              :coverflow-effect="{
+                stretch: 1,
+                depth: 20,
+                rotate: 1,
+                modifier: 1,
+                slideShadows: false,
+              }"
             >
-              <div class="swiper-slide"></div>
-            </SwiperSlide>
-          </Swiper>
+              <SwiperSlide
+                v-for="(image, index) in section.about_images"
+                :key="index"
+                class="swiper-wraper"
+                :style="`background-image: url(${image.image});
+              };`"
+              >
+                <div class="swiper-slide swiper-slide-active"></div>
+              </SwiperSlide>
+              <UiSwiperControls class="controls-right" />
+            </Swiper>
+          </div>
         </div>
         <div class="about-content__text">
           <h6>О компании</h6>
@@ -57,37 +59,39 @@
           </p>
         </div>
         <div class="about-content__swiper">
-          <Swiper
-            class="swiper-cards"
-            :width="800"
-            :modules="[SwiperEffectCoverflow, SwiperPagination]"
-            :pagination="true"
-            :initialSlide="1"
-            ,
-            :loop="false"
-            :effect="'coverflow'"
-            :space-between="30"
-            :slides-per-view="3"
-            :slider-to-scroll="3"
-            :centered-slides="true"
-            :coverflow-effect="{
-              stretch: 1,
-              depth: 20,
-              rotate: 1,
-              modifier: 1,
-              slideShadows: false,
-            }"
-          >
-            <SwiperSlide
-              v-for="image in licenses"
-              :key="image.id"
-              class="swiper-wraper"
-              :style="`background-image: url(${image.image});
-              };`"
+          <div class="swiper-container">
+            <Swiper
+              class="swiper-cards"
+              :width="800"
+              :modules="[SwiperEffectCoverflow, SwiperPagination]"
+              :pagination="true"
+              :initialSlide="1"
+              :loop="false"
+              :effect="'coverflow'"
+              :space-between="60"
+              :slides-per-view="3"
+              :slider-to-scroll="3"
+              :centered-slides="true"
+              :coverflow-effect="{
+                stretch: 1,
+                depth: 20,
+                rotate: 1,
+                modifier: 1,
+                slideShadows: false,
+              }"
             >
-              <div class="swiper-slide"></div>
-            </SwiperSlide>
-          </Swiper>
+              <SwiperSlide
+                v-for="image in licenses"
+                :key="image.id"
+                class="swiper-wraper"
+                :style="`background-image: url(${image.image});
+              };`"
+              >
+                <div class="swiper-slide"></div>
+              </SwiperSlide>
+              <UiSwiperControls class="controls-left" />
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>
@@ -112,19 +116,19 @@ const { data: licenses } = await useFetch(
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 350px;
+  width: 380px;
   height: 450px;
   border-radius: 32px;
   transition: all 0.3s ease;
+  box-shadow: 20px 20px 20px 0 rgba(40, 43, 57, 0.3);
 
   & .swiper-slide-active {
     z-index: 2;
-    transform: scale(1.8);
+    width: 450px;
   }
 }
 
 .swiper-cards {
-  overflow: hidden;
   max-width: 691px !important;
   width: 100%;
 }

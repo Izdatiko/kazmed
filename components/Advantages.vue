@@ -30,6 +30,7 @@
     </div>
     <UiButton to="#form" class="whiteBtn">Оставить заявку</UiButton>
   </div>
+  <div class="advantages-oBlock"></div>
 </template>
 
 <script setup>

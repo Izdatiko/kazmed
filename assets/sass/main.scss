@@ -43,7 +43,25 @@ body    {
     width: 100%;
     margin: 0 auto;
     padding: 30px 10px;
+    overflow: visible;
+}
+
+.pagination {
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 
 
+.swiper-cards{
+    min-height: 300px;
+    & .swiper-slide-active {
+        z-index: 2;
+        transform: scale(1.1) !important;
+      }
+}
+.swiper-container {
+    max-width: 691px;
+  }

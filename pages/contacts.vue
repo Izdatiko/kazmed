@@ -2,8 +2,10 @@
   <div class="pagination">
     <div class="section-container">
       <nuxt-link to="/">Главная</nuxt-link> /
-      <nuxt-link to="/patners">Партнеры</nuxt-link>
+      <nuxt-link to="/contacts">Контакты</nuxt-link>
     </div>
   </div>
-  <Partners />
+  <Contacts />
+  <Form />
+  <Work />
 </template>

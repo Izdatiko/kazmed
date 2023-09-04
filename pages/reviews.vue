@@ -1,6 +1,10 @@
 <template>
   <div class="review">
     <div class="section-container">
+      <div class="pagination">
+        <nuxt-link to="/">Главная</nuxt-link> /
+        <nuxt-link to="/reviews">Отзывы</nuxt-link>
+      </div>
       <div class="review-content">
         <div class="review-content__title">
           <h1>Отзывы</h1>

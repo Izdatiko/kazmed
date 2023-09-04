@@ -3,16 +3,16 @@
     <div class="header-container">
       <div class="footer-content">
         <div class="footer-content__items">
-          <nuxt-link to="">
+          <nuxt-link to="/">
             <img src="@/assets/img/Logo.png" alt="" />
           </nuxt-link>
         </div>
         <div class="footer-content__items">
-          <nuxt-link to="/">О компании</nuxt-link>
-          <nuxt-link to="/">Партнеры</nuxt-link>
-          <nuxt-link to="/">Преимущества</nuxt-link>
-          <nuxt-link to="/">Услуги</nuxt-link>
-          <nuxt-link to="/">Контакты</nuxt-link>
+          <nuxt-link to="/about">О компании</nuxt-link>
+          <nuxt-link to="/partners">Партнеры</nuxt-link>
+          <nuxt-link to="/advantages">Преимущества</nuxt-link>
+          <nuxt-link to="/services">Услуги</nuxt-link>
+          <nuxt-link to="/contacts">Контакты</nuxt-link>
         </div>
         <div class="footer-content__items">
           <div class="footer-content__contacts">

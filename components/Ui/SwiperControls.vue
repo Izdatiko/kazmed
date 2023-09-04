@@ -13,5 +13,8 @@ const swiper = useSwiper();
 .controls {
   display: flex;
   gap: 10px;
+  top: -60px;
+  position: absolute;
+  right: 20px;
 }
 </style>

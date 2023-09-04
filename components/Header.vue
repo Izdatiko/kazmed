@@ -29,20 +29,20 @@
           <nuxt-link
             :class="{ isActive: isActive === 'advantages' }"
             @click="setActive('advantages')"
-            to="/"
+            to="/advantages"
             >Преимущества</nuxt-link
           >
           <nuxt-link
             :class="{ isActive: isActive === 'services' }"
             @click="setActive('services')"
-            to="/"
+            to="/services"
           >
             <div>Услуги</div>
           </nuxt-link>
           <nuxt-link
             :class="{ isActive: isActive === 'contacts' }"
             @click="setActive('contacts')"
-            to="/"
+            to="/contacts"
             >Контакты</nuxt-link
           >
         </div>
@@ -91,19 +91,19 @@
           <nuxt-link
             :class="{ isActive: isActive === 'advantages' }"
             @click="setActive('advantages')"
-            to="/"
+            to="/advantages"
             >Преимущества</nuxt-link
           >
           <nuxt-link
             :class="{ isActive: isActive === 'services' }"
             @click="setActive('services')"
-            to="/"
+            to="/services"
             >Услуги</nuxt-link
           >
           <nuxt-link
             :class="{ isActive: isActive === 'contacts' }"
             @click="setActive('contacts')"
-            to="/"
+            to="/contacts"
             >Контакты</nuxt-link
           >
         </div>
