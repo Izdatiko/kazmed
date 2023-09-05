@@ -50,9 +50,6 @@ body    {
     a {
         text-decoration: none;
         color: black;
-        :hover {
-            text-decoration: overline;
-        }
     }
 }
 
@@ -72,8 +69,15 @@ body    {
         }
       }
 }
+
 .swiper-container {
     max-width: 691px;
+  }
+
+  .white-bg {
+    background: white;
+    border-radius: 32px;
+    padding-top: 60px;
   }
 
 

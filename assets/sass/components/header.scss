@@ -10,7 +10,6 @@
     border-bottom-right-radius: 32px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
-    // max-width: 1300px;
     margin: 0 auto;
 
     &-nav {
@@ -74,23 +73,3 @@
     z-index: 1000; 
 }
 
-.active {
-    &-burger {
-      & &__one:nth-child(2) {
-        transition: all;
-        transition-duration: 500ms;
-        transform: rotate(45deg) translate(20%, -30%);
-      }
-      & &__one:first-child {
-        transition: all;
-        transition-duration: 500ms;
-        transform: rotate(45deg);
-        opacity: 0;
-      }
-      & &__one:last-child {
-        transition: all;
-        transition-duration: 500ms;
-        transform: rotate(-45deg) translate(-45%, -5%);
-      }
-    }
-  }

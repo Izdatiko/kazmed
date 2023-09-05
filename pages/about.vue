@@ -62,14 +62,6 @@ const { data: about } = await useFetch("https://www.api.kme.kz/api/about/");
   border-radius: 32px;
   transition: all 0.3s ease;
   box-shadow: 20px 20px 20px 0 rgba(40, 43, 57, 0.3);
-  // @media (max-width: 710px) {
-  //   width: 100px !important;
-  //   height: 450px;
-  // }
-  // @media (max-width: 710px) {
-  //   width: 100px !important;
-  //   height: 450px;
-  // }
 
   & .swiper-slide-active {
     z-index: 2;

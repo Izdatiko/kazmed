@@ -35,7 +35,46 @@
 </template>
 
 <script setup>
+let showModal = ref(false);
+
 const { data: contacts } = await useFetch(
   "https://www.api.kme.kz/api/contacts/"
 );
+
+const formData = ref({
+  name: "",
+  phone_number: "",
+});
+
+const closeModal = () => {
+  showModal.value = false;
+};
+
+const maxPhoneNumberLength = 12;
+
+const submitForm = async () => {
+  try {
+    const response = await fetch("https://www.api.kme.kz/api/feedbacks/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.value.name,
+        phone_number: formData.value.phone_number,
+      }),
+    });
+    if (response.ok) {
+      const responseData = await response.json();
+      console.log(responseData);
+      formData.value.name = "";
+      formData.value.phone_number = "";
+      showModal.value = true;
+    } else {
+      console.error("Ошибка");
+    }
+  } catch (error) {
+    console.error("Ошибка:", error);
+  }
+};
 </script>

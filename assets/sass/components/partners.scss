@@ -49,6 +49,8 @@
             max-width: 200px;
             margin: 0 auto;
         }
+        &  .blue-bg {
+          }
 
 
         @media (min-width: 576px) {
@@ -80,9 +82,6 @@
             border-radius: 32px;
             padding: 20px;
             display: flex;
-            // align-items: center;
-            // width: 170px;
-            // height: auto;
             justify-content: center;
         }
     }

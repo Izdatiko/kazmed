@@ -8,11 +8,9 @@
     border-radius: 32px 32px 0 32px;
     margin: 0 auto;
     max-width: 1400px;
-    padding-bottom: 50px;
     padding-top: 92px;
     position: relative;
     width: 100%;
-    overflow: hidden;
     @media (max-width: 1400px) {
         border-radius: 32px ;
     }
@@ -193,7 +191,10 @@
 }
 
 .pageAbout {
+    margin-top: 20px;
     padding-right: 0 !important;
+    padding-left: 0 !important;
+
 }
 
 .about-gallery__img:hover {
@@ -206,4 +207,8 @@
     @media (min-width: 700px) {
         display: none;
     }
+}
+
+.pt {
+    padding-top: 70px;
 }

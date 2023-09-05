@@ -12,28 +12,6 @@
         <div v-for="logo in logos" :key="logo.id" class="partners-items__box">
           <img :src="logo.logo" alt="" />
         </div>
-
-        <!-- <div class="partners-items__box">
-          <img src="@/assets/img/partners/1.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/2.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/3.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/4.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/5.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/6.png" alt="" />
-        </div>
-        <div class="partners-items__box">
-          <img src="@/assets/img/partners/7.png" alt="" />
-        </div> -->
       </div>
     </div>
   </div>

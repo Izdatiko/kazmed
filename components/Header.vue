@@ -57,56 +57,7 @@
             </nuxt-link>
           </div>
         </div>
-        <div v-if="isMobile" class="header-nav__items">
-          <button
-            @click="isBurger = !isBurger"
-            :class="isBurger ? 'header-svg active-burger' : 'header-svg'"
-          >
-            <IconBurger />
-          </button>
-        </div>
-        <div
-          v-if="isBurger"
-          class="burger-menu"
-          :class="{ 'show-burger': isBurger }"
-        >
-          <nuxt-link
-            :class="{ isActive: isActive === 'about' }"
-            @click="setActive('about')"
-            to="/about"
-            >О компании</nuxt-link
-          >
-          <nuxt-link
-            :class="{ isActive: isActive === 'reviews' }"
-            @click="setActive('reviews')"
-            to="/reviews"
-            >Отзывы</nuxt-link
-          >
-          <nuxt-link
-            :class="{ isActive: isActive === 'partners' }"
-            @click="setActive('partners')"
-            to="/partners"
-            >Партнеры</nuxt-link
-          >
-          <nuxt-link
-            :class="{ isActive: isActive === 'advantages' }"
-            @click="setActive('advantages')"
-            to="/advantages"
-            >Преимущества</nuxt-link
-          >
-          <nuxt-link
-            :class="{ isActive: isActive === 'services' }"
-            @click="setActive('services')"
-            to="/services"
-            >Услуги</nuxt-link
-          >
-          <nuxt-link
-            :class="{ isActive: isActive === 'contacts' }"
-            @click="setActive('contacts')"
-            to="/contacts"
-            >Контакты</nuxt-link
-          >
-        </div>
+        <Burger v-if="isMobile" />
       </div>
     </div>
   </div>
@@ -130,9 +81,8 @@ function setActive(section) {
 
 .burger-menu {
   position: absolute;
-  top: 100%;
+  top: 0;
   right: -100%;
-  width: 100%;
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -140,8 +90,14 @@ function setActive(section) {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  transition: transform 0.6s ease;
+  transition: right 0.6s ease;
   text-decoration: none;
+  max-width: 200px;
+  height: 100vh;
+}
+
+.show-burger .burger-menu {
+  right: 0;
 }
 
 .show-burger {
