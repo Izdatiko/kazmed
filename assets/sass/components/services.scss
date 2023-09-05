@@ -1,14 +1,13 @@
 .services {
     margin-bottom: 92px;
     text-align: center;
-    // max-width: 1400px;
     width: 100%;
-    // background: #000;
-    // display: none;
     a {
         text-decoration: none;
         color: #000;
         margin: 0 auto;
+        width:100%;
+
         @media (max-width: 1400px) {
         max-width: 300px;
         }
@@ -38,11 +37,19 @@
         gap: 12px;
         grid-template-columns: repeat(3,1fr);
         padding-top: 62px;
+
         @media (max-width: 1000px) {
             grid-template-columns: repeat(2,1fr);
         }
         @media (max-width: 700px) {
             grid-template-columns: repeat(1,1fr);
+        }
+        &__image{
+            background-position: center;
+            background-size: cover;
+            width: 440px;
+            height: 260px;
+            border-radius: 32px;
         }
         &__item {
             display: flex;
@@ -51,6 +58,7 @@
             row-gap: 15px;
             background: white;
             border-radius: 32px;
+            grid-column: span 1/ span 1
             h3 {
                 text-align: left;
             }
@@ -75,8 +83,50 @@
         border-radius: 20px;
         max-height: 250px;
         overflow: hidden;
+        object-fit: cover;
         @media (max-width: 500px) {
             max-height: 150px;
         }
     }
+}
+
+.sid    {
+    background: white;
+    width: 100%;
+    display: flex;
+    border-radius: 32px;
+    margin: 0 15px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &__title {
+            color: #42464D;
+            font-family: Gotham Pro;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        &__content {
+            display: flex;
+            gap: 20px;
+            img {
+                border-radius: 32px;
+                width: 452px;
+                height: 284px;  
+            }
+            p {
+                color: #393B3E;
+                font-family: Gotham Pro;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 25px;
+            }
+        }
+    }
+
 }

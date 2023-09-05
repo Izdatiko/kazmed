@@ -49,8 +49,6 @@
             max-width: 200px;
             margin: 0 auto;
         }
-        &  .blue-bg {
-          }
 
 
         @media (min-width: 576px) {
@@ -83,6 +81,11 @@
             padding: 20px;
             display: flex;
             justify-content: center;
+            grid-column: span 1/ span 1;
+            img {
+                max-width: 70%;
+                max-height: fit-content;
+            }
         }
     }
 }

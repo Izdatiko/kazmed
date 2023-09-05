@@ -21,7 +21,9 @@
               {{ banner.title.slice(3, -4) }}
             </h1>
             <p>{{ banner.sub_title }}</p>
-            <UiButton class="btn"> {{ banner.button }} </UiButton>
+            <UiButton :to="banner.url" class="btn">
+              {{ banner.button }}
+            </UiButton>
           </div>
           <div class="banner-content__items">
             <img :src="banner.image" alt="" />

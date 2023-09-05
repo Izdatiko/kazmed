@@ -62,9 +62,13 @@
                 width: 150px;
                 height: 200px;
             }
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 width: 100px;
                 height: 200px;
+            }
+            @media (max-width: 410px) {
+                width: 80px;
+                height: 100px;
             }
         }
     }

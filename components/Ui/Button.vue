@@ -15,7 +15,7 @@ const emits = defineEmits(["click"]);
 
 const handleButtonClick = () => {
   if (props.to) {
-    router.push(props.to);
+    window.location.href = props.to;
   }
   emits("click", props.to);
 };
