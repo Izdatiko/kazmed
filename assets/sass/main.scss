@@ -50,18 +50,30 @@ body    {
     a {
         text-decoration: none;
         color: black;
+        :hover {
+            text-decoration: overline;
+        }
     }
 }
 
+.pagination a:hover {
+    text-decoration: underline;
+}
 
 
 .swiper-cards{
     min-height: 300px;
+    width: 100%;
     & .swiper-slide-active {
         z-index: 2;
         transform: scale(1.1) !important;
+        @media (max-width: 700) {
+            transform: scale(1) !important;
+        }
       }
 }
 .swiper-container {
     max-width: 691px;
   }
+
+

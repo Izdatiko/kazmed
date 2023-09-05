@@ -17,12 +17,6 @@
       >
         <div class="banner-content">
           <div class="banner-content__items">
-            <!-- <h1>
-              Обслуживание<br />
-              мед. оборудования<br />
-              <span>Philips</span>
-            </h1>
-            <p>от официального<br />представителя</p> -->
             <h1>
               {{ banner.title.slice(3, -4) }}
             </h1>

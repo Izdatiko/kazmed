@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const swiper = useSwiper();
-</script>
-
 <template>
   <div class="controls">
     <button @click="swiper.slidePrev()"><IconArrowLeft /></button>
@@ -9,12 +5,6 @@ const swiper = useSwiper();
   </div>
 </template>
 
-<style scoped>
-.controls {
-  display: flex;
-  gap: 10px;
-  top: -60px;
-  position: absolute;
-  right: 20px;
-}
-</style>
+<script setup>
+const swiper = useSwiper();
+</script>

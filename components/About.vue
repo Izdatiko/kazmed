@@ -6,22 +6,29 @@
           <div class="swiper-container">
             <Swiper
               class="swiper-cards"
-              :width="800"
-              :modules="[SwiperEffectCoverflow, SwiperPagination]"
+              :modules="[SwiperPagination]"
               :pagination="true"
-              :initialSlide="1"
               :loop="false"
-              :effect="'coverflow'"
-              :space-between="60"
-              :slides-per-view="3"
-              :slider-to-scroll="3"
+              :slides-per-view="1"
+              :slider-to-scroll="1"
               :centered-slides="true"
-              :coverflow-effect="{
-                stretch: 1,
-                depth: 20,
-                rotate: 1,
-                modifier: 1,
-                slideShadows: false,
+              :breakpoints="{
+                700: {
+                  modules: [SwiperEffectCoverflow],
+                  centeredSlides: true,
+                  spaceBetween: 60,
+                  slidesPerView: 3,
+                  width: 800,
+                  sliderToScroll: 3,
+                  effect: 'coverflow',
+                  coverflowEffect: {
+                    stretch: 1,
+                    depth: 20,
+                    rotate: 1,
+                    modifier: 1,
+                    slideShadows: false,
+                  },
+                },
               }"
             >
               <SwiperSlide
@@ -31,7 +38,7 @@
                 :style="`background-image: url(${image.image});
               };`"
               >
-                <div class="swiper-slide swiper-slide-active"></div>
+                <div class="swiper-slide"></div>
               </SwiperSlide>
               <UiSwiperControls class="controls-right" />
             </Swiper>
@@ -44,7 +51,15 @@
           <p>
             {{ section.description }}
           </p>
-          <UiButton class="btn"> Узнать больше </UiButton>
+          <UiButton :to="'/about'" class="btn"> Узнать больше </UiButton>
+        </div>
+      </div>
+      <div class="about-gallery componentAbout">
+        <div v-for="image in section.about_images" :key="image.id">
+          <div
+            class="about-gallery__img"
+            :style="`background-image: url(${image.image});`"
+          ></div>
         </div>
       </div>
       <div class="about-content">
@@ -62,22 +77,29 @@
           <div class="swiper-container">
             <Swiper
               class="swiper-cards"
-              :width="800"
-              :modules="[SwiperEffectCoverflow, SwiperPagination]"
+              :modules="[SwiperPagination]"
               :pagination="true"
-              :initialSlide="1"
               :loop="false"
-              :effect="'coverflow'"
-              :space-between="60"
-              :slides-per-view="3"
-              :slider-to-scroll="3"
+              :slides-per-view="1"
+              :slider-to-scroll="1"
               :centered-slides="true"
-              :coverflow-effect="{
-                stretch: 1,
-                depth: 20,
-                rotate: 1,
-                modifier: 1,
-                slideShadows: false,
+              :breakpoints="{
+                700: {
+                  modules: [SwiperEffectCoverflow],
+                  centeredSlides: true,
+                  spaceBetween: 60,
+                  slidesPerView: 3,
+                  width: 800,
+                  sliderToScroll: 3,
+                  effect: 'coverflow',
+                  coverflowEffect: {
+                    stretch: 1,
+                    depth: 20,
+                    rotate: 1,
+                    modifier: 1,
+                    slideShadows: false,
+                  },
+                },
               }"
             >
               <SwiperSlide
@@ -116,20 +138,19 @@ const { data: licenses } = await useFetch(
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 380px;
-  height: 450px;
+  height: 450px !important;
   border-radius: 32px;
   transition: all 0.3s ease;
-  box-shadow: 20px 20px 20px 0 rgba(40, 43, 57, 0.3);
-
-  & .swiper-slide-active {
-    z-index: 2;
-    width: 450px;
+  @media (min-width: 700px) {
+    box-shadow: 20px 20px 20px 0 rgba(40, 43, 57, 0.3);
+    height: 200px;
   }
 }
-
 .swiper-cards {
   max-width: 691px !important;
   width: 100%;
+  @media (max-width: 700px) {
+    max-width: 501px !important;
+  }
 }
 </style>
